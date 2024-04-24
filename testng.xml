@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<groups>
 		<run>
-			<exclude name="sanity"></exclude>
+			<include name="sanity"></include>
 		</run>
 	</groups>
 	<listeners>
