@@ -28,7 +28,7 @@ public class HandleSslCertificates {
 		// comment added 
 		Assert.assertEquals(driver.getTitle(), "expired.badssl.com");
 
-		driver.quit();
+		driver.close();
 	}
 
 }
