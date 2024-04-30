@@ -18,6 +18,8 @@ public class HandleSslCertificates {
 
 		WebDriver driver = new ChromeDriver(chromeOptions);
 
+		driver.manage().window().maximize();
+		
 		driver.get("https://expired.badssl.com/");
 
 		Assert.assertEquals(driver.getTitle(), "expired.badssl.com");
