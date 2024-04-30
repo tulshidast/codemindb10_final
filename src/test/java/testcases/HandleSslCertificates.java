@@ -2,6 +2,7 @@ package testcases;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,9 +21,12 @@ public class HandleSslCertificates {
 
 		WebDriver driver = new ChromeDriver(chromeOptions);
 
+		driver.close();
+		
 		driver.manage().window().maximize();
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
 		driver.get("https://expired.badssl.com/");
 
 		// comment added 
