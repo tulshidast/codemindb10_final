@@ -1,10 +1,12 @@
 package testcases;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -33,7 +35,11 @@ public class BaseTest {
 	}
 
 	@AfterMethod(alwaysRun = true)
-	public void tearDown() {
+	public void tearDown(ITestResult result) throws IOException {
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+			CommonUtils.takesScreenshot(driver, result.getName() + "_" + System.currentTimeMillis());
+		}
 		driver.quit();
 	}
 
