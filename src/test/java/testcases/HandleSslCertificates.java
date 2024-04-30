@@ -32,7 +32,7 @@ public class HandleSslCertificates {
 		// comment added 
 		Assert.assertEquals(driver.getTitle(), "expired.badssl.com");
 
-		driver.findElement(By.cssSelector("#as"));
+		driver.close();
 	}
 
 }
